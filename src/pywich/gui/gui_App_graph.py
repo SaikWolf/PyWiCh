@@ -111,6 +111,7 @@ class AppGraph():
         
         """         
         width, height = window.winfo_screenwidth(), window.winfo_screenheight()
+        width = min(width,1920)
         self.__FONT_SIZE = int(width /1.25/ 1920*25)
         #window.geometry('%dx%d+0+0' % (width/1.1,height/1.1))
 

@@ -132,7 +132,7 @@ def setup_performance(args):
 
     simulation_path = os.path.join(args.path,args.name)
 
-    constraints = [{
+    constraints = {
         'fading' : fading,
         'freq_band' : freq_band,
         'antennaTx' : bs_ants,
@@ -141,8 +141,8 @@ def setup_performance(args):
         'n_times': timings,
         'force_los': args.los,
         'path': simulation_path,
-        'mode': 2
-    }]
+        'mode': 2 if args.Nms < 2 else 1
+    }
     return performance,constraints,(bs_ants,ms_ants,scenario,freq_band,fading,positions,timings,simulation_path)
 
 def main(args):
@@ -169,7 +169,7 @@ def main(args):
     components[1].save(components[-1])
     components[3].save(components[-1])
 
-    performance.compute_path(**(constraints[0]))
+    performance.compute_path(**constraints)
 
 
 
