@@ -9,8 +9,12 @@ This module plots different scenario properties.
 
 import numpy as np
 import matplotlib.pyplot as plt
-import scenarios as sc
-import angles as angles
+try:
+    import scenarios as sc
+    import angles as angles
+except ImportError:
+    import pywich.scenarios as sc
+    import pywich.angles as angles
 from pylab import rcParams
 #import seaborn as sns
 from matplotlib import cm  

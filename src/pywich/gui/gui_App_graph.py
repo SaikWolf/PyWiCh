@@ -7,34 +7,52 @@ This module is the main User interface of the Python wireless channel simulator
 """
 ##### to run from the project directory
 import sys,os
-sys.path.append('./src')
-sys.path.append('./src/gui')
-sys.path.append('./src/graph')
+# sys.path.append('./src')
+# sys.path.append('./src/gui')
+# sys.path.append('./src/graph')
 
 ###### to run from gui directory
-sys.path.append('../')
-sys.path.append('../gui')
-sys.path.append('../graph')
+# sys.path.append('../')
+# sys.path.append('../gui')
+# sys.path.append('../graph')
 
 
 import tkinter as tk
 import tkinter.font as tkfont
-import gui.gui_antennas as ga
-import gui.gui_scenarios as gs
-import gui.gui_select_LSP as glsp
-import gui.gui_select_SSP as gssp
-import gui.gui_user_message as gum
-import gui.gui_frequency_band as gfb
-import gui.gui_name_input as gni
-import gui.gui_select_point as gsp
-import gui.gui_select_point_prb as gspp
+try:
+    import gui.gui_antennas as ga
+    import gui.gui_scenarios as gs
+    import gui.gui_select_LSP as glsp
+    import gui.gui_select_SSP as gssp
+    import gui.gui_user_message as gum
+    import gui.gui_frequency_band as gfb
+    import gui.gui_name_input as gni
+    import gui.gui_select_point as gsp
+    import gui.gui_select_point_prb as gspp
 
-import frequency_band as fband
-import scenarios as sc
-import fading as fad
+    import frequency_band as fband
+    import scenarios as sc
+    import fading as fad
 
-import graph.graph_scenarios as grs
-import channel_performance as cp
+    import graph.graph_scenarios as grs
+    import channel_performance as cp
+except ImportError:
+    import pywich.gui.gui_antennas as ga
+    import pywich.gui.gui_scenarios as gs
+    import pywich.gui.gui_select_LSP as glsp
+    import pywich.gui.gui_select_SSP as gssp
+    import pywich.gui.gui_user_message as gum
+    import pywich.gui.gui_frequency_band as gfb
+    import pywich.gui.gui_name_input as gni
+    import pywich.gui.gui_select_point as gsp
+    import pywich.gui.gui_select_point_prb as gspp
+
+    import pywich.frequency_band as fband
+    import pywich.scenarios as sc
+    import pywich.fading as fad
+
+    import pywich.graph.graph_scenarios as grs
+    import pywich.channel_performance as cp
 import numpy as np
 from tkinter import filedialog
 import errno

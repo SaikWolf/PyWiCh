@@ -8,7 +8,10 @@ This module is a gui for asking the user to select one point in the MS route.
 
 import tkinter as tk
 import tkinter.font as tkfont
-import gui.gui_user_message as gum
+try:
+    import gui.gui_user_message as gum
+except ImportError:
+    import pywich.gui.gui_user_message as gum
 
 class AppSelectPoint():
     """ This class is the form for select the point in MS route """

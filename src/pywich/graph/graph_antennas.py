@@ -6,7 +6,10 @@
 """
 import numpy as np
 import matplotlib.pyplot as plt
-import angles as angles
+try:
+    import angles as angles
+except ImportError:
+    import pywich.angles as angles
 from pylab import rcParams
 import matplotlib as mpl
 

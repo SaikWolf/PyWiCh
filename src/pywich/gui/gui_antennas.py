@@ -6,9 +6,14 @@ This module is a gui for the configuration of the antenna.
 @author: pablo belzarena
 """
 import tkinter as tk
-import graph.graph_antennas as ga
-import gui.gui_user_message as gum
-import antennas as antennas
+try:
+    import graph.graph_antennas as ga
+    import gui.gui_user_message as gum
+    import antennas as antennas
+except ImportError:
+    import pywich.graph.graph_antennas as ga
+    import pywich.gui.gui_user_message as gum
+    import pywich.antennas as antennas
 
 class AppAntenna():
     """ This class is the form for the configuration of the antenna. """

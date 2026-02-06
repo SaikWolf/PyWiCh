@@ -9,7 +9,10 @@ This module is a gui for asking the user to select one Physical Resource Block (
 
 import tkinter as tk
 import tkinter.font as tkfont
-import gui.gui_user_message as gum
+try:
+    import gui.gui_user_message as gum
+except ImportError:
+    import pywich.gui.gui_user_message as gum
 
 
 class AppSelectPointPrb():

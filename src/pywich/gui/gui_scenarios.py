@@ -7,8 +7,12 @@ This module is a gui for the configuration of the simulation scenario.
 """
 import tkinter as tk
 import tkinter.font as tkfont
-import graph.graph_scenarios as grs
-import gui.gui_user_message as gum
+try:
+    import graph.graph_scenarios as grs
+    import gui.gui_user_message as gum
+except ImportError:
+    import pywich.graph.graph_scenarios as grs
+    import pywich.gui.gui_user_message as gum
 import numpy as np
 
 class AppScenarios():

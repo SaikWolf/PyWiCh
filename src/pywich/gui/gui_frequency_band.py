@@ -7,7 +7,11 @@ This module is a gui for the configuration of the OFDM frequency band of the sys
 """
 
 import tkinter as tk
-import gui.gui_user_message as gum
+try:
+    import gui.gui_user_message as gum
+except ImportError:
+    import pywich.gui.gui_user_message as gum
+
 
 
 class AppFreqBand():
