@@ -6,7 +6,10 @@ power patterns
 @author: pablo belzarena
 """
 import numpy as np
-import angles as an
+try:
+    import angles as an
+except ImportError:
+    from pywich import angles as an
 
 
 class Antenna:

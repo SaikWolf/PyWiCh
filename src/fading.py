@@ -6,7 +6,10 @@
 """
 
 import numpy as np
-import angles as ang
+try:
+    import angles as ang
+except ImportError:
+    from pywich import angles as ang
 from time import perf_counter
 
 

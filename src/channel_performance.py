@@ -8,8 +8,12 @@
 
 import numpy as np
 import copy
-import fading as fad
-import angles as ang
+try:
+    import fading as fad
+    import angles as ang
+except ImportError:
+    from pywich import fading as fad
+    from pywich import angles as ang
 from time import perf_counter
 
 
